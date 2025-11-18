@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-white;
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Password Strength Analyzer</h1>
+            <p class="subtitle">Check your password strength in real-time</p>
+            
+            <input type="password" id="passwordInput" placeholder="Enter your password" class="password-input">
+            
+            <div id="results" class="results hidden">
+                <div class="score-display">
+                    <div class="score-circle" id="scoreCircle">
+                        <span id="scoreText">0</span>/9
+                    </div>
+                    <div class="score-info">
+                        <p class="strength" id="strengthText">Enter a password</p>
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strengthFill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checklist">
+                    <div class="check-item" id="lengthCheck">
+                        <span class="icon">✓</span>
+                        <span>At least 8 characters</span>
+                    </div>
+                    <div class="check-item" id="uppercaseCheck">
+                        <span class="icon">✓</span>
+                        <span>Uppercase letters (A-Z)</span>
+                    </div>
+                    <div class="check-item" id="lowercaseCheck">
+                        <span class="icon">✓</span>
+                        <span>Lowercase letters (a-z)</span>
+                    </div>
+                    <div class="check-item" id="digitsCheck">
+                        <span class="icon">✓</span>
+                        <span>Numbers (0-9)</span>
+                    </div>
+                    <div class="check-item" id="specialCheck">
+                        <span class="icon">✓</span>
+                        <span>Special characters (!@#$%)</span>
+                    </div>
+                </div>
+                
+                <div id="suggestions" class="suggestions"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
